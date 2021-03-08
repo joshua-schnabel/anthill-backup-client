@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "outDir": "./dist/",
+    "baseUrl": "./src/",
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "lib": ["es6", "dom", "ES2020", "ES7"],
+    "types": ["node"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "typeRoots": ["./node_modules/@types"],
+    "paths": {
+      "@domain/*": ["./domain/*"],
+      "@application/*": ["./application/*"],
+      "@infrastructure/*": ["./infrastructure/*"],
+      "@logger": ["./application/logging/logger"],
+      "@config": ["./application/configuration/config"],
+      "@autoload/*": ["./autoload/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

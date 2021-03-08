@@ -1,0 +1,56 @@
+{
+  "name": "heimdall.js-server",
+  "version": "1.0.0",
+  "description": "Heimdall Server",
+  "type": "module",
+  "main": "/src/server.js",
+  "scripts": {
+    "start": "cross-env CONFIGDIR=./config/ NODE_ENV=production node --no-warnings --loader ./src/myloader.mjs --experimental-top-level-await --experimental-specifier-resolution=node src/server.ts",
+    "dev-start": "cross-env CONFIGDIR=./config/ NODE_ENV=development node --no-warnings --loader ./src/myloader.mjs --experimental-top-level-await --experimental-specifier-resolution=node src/server.ts",
+    "dev": "cross-env CONFIGDIR=./config/ NODE_ENV=development nodemon --watch src --delay 1 --exec 'npm run dev-start",
+    "test": "jest --forceExit --detectOpenHandles",
+    "lint": "eslint --fix --ext ts src/"
+  },
+  "author": "Joshua Schnabel",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^2.0.0",
+    "crypto-js": "^4.0.0",
+    "envalid": "^6.0.0",
+    "fast-glob": "^3.2.5",
+    "js-yaml": "^3.0.0",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "log4js": "^6.3.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.1.1",
+    "tsyringe": "^4.3.0",
+    "typescript": "^3.9.5"
+  },
+  "_moduleAliases": {
+    "@domain/*": "./src/domain/*",
+    "@application/*": "./src/application/*",
+    "@logger": "./src/application/logging/logger",
+    "@config": "./src/application/configuration/config",
+    "@autoload/*": "./src/autoload/*"
+  },
+  "devDependencies": {
+    "@types/cli-color": "^2.0.0",
+    "@types/crypto-js": "^4.0.1",
+    "@types/js-yaml": "^3.0.0",
+    "@types/lodash-es": "^4.17.4",
+    "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-unused-imports": "^1.1.0",
+    "nodemon": "^2.0.7"
+  }
+}
